@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Form Submit</title>
+	<script type="text/javascript">
+	function FormSubmit(form) {
+		var xhr = new XMLHttpRequest(),
+			serialize = new FormData(form),
+			button = form.getElementsByTagName("button");
+		xhr.addEventListener("load", function(event){
+			button[0].innerHTML = event.target.responseText;
+		});
+		xhr.addEventListener("error", function(event){
+			button[0].innerHTML = 'error';
+		});
+		xhr.open('post', 'post.php');
+		xhr.send(serialize);
+		return false;
+	}
+	</script>
+</head>
+<body>
+	<form onsubmit="return FormSubmit(this)">
+	<input type="text" name="name">
+	<input type="text" name="pass">
+	<button>Send</button>
+	</form>
+</body>
+</html>
