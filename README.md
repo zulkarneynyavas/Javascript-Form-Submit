@@ -1,2 +1,2 @@
-# Javascript-Form-Submit
-Form submit with pure javascript.
+# Pure Javascript Form Submit
+Form submit using pure javascript.
